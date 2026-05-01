@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: z-market-mcp-server
+  ai:
+    mcp:
+      server:
+        name: z-market-mcp-server
+        version: 1.0.0
+
+server:
+  port: 8084
