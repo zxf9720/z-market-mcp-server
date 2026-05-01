@@ -134,7 +134,7 @@ target/site/jacoco/index.html
 
 ## Tool Registration
 
-`MarketRateTool` exposes its method with Spring AI annotations:
+`MarketRateTool` exposes its method with Spring AI annotations: 
 
 ```java
 @Tool(description = "Get the current interest rate for a banking or wealth product")
