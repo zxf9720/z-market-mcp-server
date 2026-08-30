@@ -49,8 +49,11 @@ Market Tools
 - Spring AI 2.0.0
 - springdoc-openapi 3.0.2
 - Spring AI MCP Server WebMVC starter
+- Stateless MCP protocol mode
 - JUnit 5 and AssertJ
 - JaCoCo test coverage reporting
+
+Spring AI and MCP SDK dependency versions are managed by the Spring AI 2.0.0 BOM.
 
 ## Project Structure
 
@@ -81,12 +84,15 @@ spring:
       server:
         name: z-market-mcp-server
         version: 1.0.0
+        protocol: STATELESS
 
 server:
   port: 8084
 ```
 
 By default, the HTTP server starts on port `8084`.
+
+The MCP server uses stateless protocol mode, so requests do not depend on server-side MCP session state and can be handled independently by any application instance.
 
 OpenAPI documentation is available at `/v3/api-docs`, with Swagger UI at `/swagger-ui.html`.
 
