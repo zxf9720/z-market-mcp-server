@@ -40,12 +40,14 @@ z-market-mcp-server
         |
         v
 Market Tools
+```
 
 ## Tech Stack
 
-- Java 21
-- Spring Boot 3.5.14
-- Spring AI 1.0.5
+- JDK 25
+- Spring Boot 4.1.0
+- Spring AI 2.0.0
+- springdoc-openapi 3.0.2
 - Spring AI MCP Server WebMVC starter
 - JUnit 5 and AssertJ
 - JaCoCo test coverage reporting
@@ -86,18 +88,26 @@ server:
 
 By default, the HTTP server starts on port `8084`.
 
+OpenAPI documentation is available at `/v3/api-docs`, with Swagger UI at `/swagger-ui.html`.
+
+## Prerequisites
+
+- JDK 25
+- Maven 3.9+ (or use the included Maven wrapper)
+- Docker, if running the container image
+
 ## Run
 
 Start the server:
 
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 Build the JAR:
 
 ```bash
-mvn package
+./mvnw package
 ```
 
 Run the packaged application:
@@ -106,24 +116,31 @@ Run the packaged application:
 java -jar target/z-market-mcp-server-0.0.1-SNAPSHOT.jar
 ```
 
+Build and run the Java 25 container image:
+
+```bash
+docker build -t z-market-mcp-server .
+docker run --rm -p 8084:8084 z-market-mcp-server
+```
+
 ## Test
 
 Run the test suite:
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 Run verification, including the configured JaCoCo coverage check:
 
 ```bash
-mvn verify
+./mvnw verify
 ```
 
 Generate the JaCoCo report:
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 Then open:
