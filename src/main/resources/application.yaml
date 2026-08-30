@@ -6,6 +6,7 @@ spring:
       server:
         name: z-market-mcp-server
         version: 1.0.0
+        protocol: STATELESS
 
 server:
   port: 8084
